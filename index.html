@@ -8,7 +8,7 @@
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
   <title>똑… 똑… 똑… | 서은찬 캐릭터 설정서</title>
   <meta name="description" content="머더 미스터리 똑… 똑… 똑… 서은찬 전용 모바일 캐릭터 설정서">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=reader-tutorial-1">
 </head>
 <body class="is-locked">
   <span class="page-top-anchor" id="pageTop" aria-hidden="true"></span>
@@ -21,6 +21,24 @@
       <h1 id="gateTitle">서은찬 플레이어만<br>확인해 주세요.</h1>
       <p>이 설정서에는 서은찬만 알고 있는 행동과 비밀이 들어 있습니다. 다른 플레이어가 화면을 볼 수 없는지 확인해 주세요.</p>
       <button id="acknowledgeButton" type="button">확인했습니다. 설정서 열기</button>
+    </div>
+  </section>
+
+  <section class="reader-tutorial" id="readerTutorial" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle" aria-describedby="tutorialDescription" hidden>
+    <div class="reader-tutorial__spotlight" id="tutorialSpotlight" aria-hidden="true"></div>
+    <div class="reader-tutorial__card" id="tutorialCard">
+      <div class="reader-tutorial__meta">
+        <p>상단 버튼 안내 <span id="tutorialCounter">1 / 4</span></p>
+        <button id="tutorialClose" type="button" aria-label="버튼 안내 닫기">닫기</button>
+      </div>
+      <div class="reader-tutorial__copy" aria-live="polite" aria-atomic="true">
+        <h2 id="tutorialTitle">게임 설명서</h2>
+        <p id="tutorialDescription"></p>
+      </div>
+      <div class="reader-tutorial__actions">
+        <button id="tutorialPrevious" type="button" disabled>이전</button>
+        <button id="tutorialNext" type="button">다음</button>
+      </div>
     </div>
   </section>
 
@@ -132,7 +150,7 @@
       <div class="story-block story-block--dark">
         <h3>창문 밖으로</h3>
         <p>수련생방 문으로 나가면 모두가 알게 된다. 그래서 당신은 태민이 열어 둔 창문을 봤다. 잠깐 바람을 쐬고 물과 하준의 상황을 확인할 생각으로 창문을 통해 밖으로 나갔다.</p>
-        <p>마당을 가로질러 창고에 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다.</p>
+        <p>술기운과 메스꺼움 때문에 몸을 가누기 어려웠다. 다른 사람에게 들키지 않도록 몸을 낮추고 벽을 짚으며 천천히 마당을 가로질러 창고에 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다.</p>
       </div>
       <div class="story-block story-block--danger">
         <h3>창고에서 본 흰 형체</h3>
@@ -156,7 +174,7 @@
       <ol class="timeline-list">
         <li><div class="timeline-time" aria-label="21시 40분부터 22시 05분까지">21:40<br><span>~22:05</span></div><div><span class="location">수련생방</span><p>강태민이 소주를 꺼냈다. 당신은 망설였지만 자리에 남았고, 김하준이 빠르게 취하는 것을 보고도 말리지 못했다. <strong>21:50</strong> 강태민이 창문을 열었다. 22시 무렵 하준이 술병을 치워야 한다는 취지로 말했지만 대답하지 않았다. <strong>22:05</strong> 김하준과 강태민이 차례로 방을 나갔다.</p></div></li>
         <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 05분부터 22시 24분까지">22:05<br><span>~22:24</span></div><div><span class="location">수련생방·마당</span><p><strong>22:17</strong> 강태민만 돌아와 김하준이 없는 것을 신경 썼다. <strong>22:22</strong> 방문 바로 밖에서 세 번의 노크를 들었지만 문을 열지 않았다. <strong>22:24</strong> 속이 좋지 않고 물이 필요해 다른 사람에게 들키지 않으려고 열린 창문으로 빠져나갔다.</p></div></li>
-        <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 24분부터 22시 35분까지">22:24<br><span>~22:35</span></div><div><span class="location">마당·창고</span><p>마당을 가로질러 <strong>22:28</strong> 창고 바깥문으로 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다. 물을 찾으며 안을 살피다가 <strong>22:35</strong> 관리실 쪽 연결문으로 창고에 들어오는 흰 이불을 뒤집어쓴 사람 같은 형체를 보았다. 당신은 귀신이라고 믿고 그 자리에서 정신을 잃었다.</p></div></li>
+        <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 24분부터 22시 35분까지">22:24<br><span>~22:35</span></div><div><span class="location">마당·창고</span><p>술기운과 메스꺼움 때문에 벽을 짚고, 다른 사람에게 들키지 않도록 몸을 낮춘 채 천천히 마당을 가로질렀다. <strong>22:28</strong> 창고 바깥문으로 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다. 물을 찾으며 안을 살피다가 <strong>22:35</strong> 관리실 쪽 연결문으로 창고에 들어오는 흰 이불을 뒤집어쓴 사람 같은 형체를 보았다. 당신은 귀신이라고 믿고 그 자리에서 정신을 잃었다.</p></div></li>
         <li><div class="timeline-time" aria-label="시간 불명">시간<br><span>불명</span></div><div><span class="location">기억 없음</span><p>정신을 잃은 뒤부터 다음 날 아침 눈을 뜨기 전까지 아무것도 기억하지 못한다.</p></div></li>
         <li><div class="timeline-time">다음 날<br>아침</div><div><span class="location">수련생방·닫힌 방 앞</span><p>수련생방에서 눈을 떴고 왜 그곳에 있는지 알 수 없었다. 김하준이 닫힌 방 안에서 발견되는 것을 지켜보며 창고에서 본 흰 형체를 떠올렸다.</p></div></li>
       </ol>
@@ -209,8 +227,6 @@
         <p>하준이 형이 화장실 간다고 나간 건 기억납니다. 손에 뭘 들고 있었던 것 같기도 합니다. 태민이 형도 그 뒤에 나간 것 같고요.</p>
         <p>아침에 눈을 떴을 때 저는 수련생방에 있었습니다. 하준이 형이 닫힌 방에서 발견됐다는 말을 듣고, 저녁에 들었던 괴담이 먼저 떠올랐습니다. 저는 정말 왜 그런 일이 생겼는지 모르겠습니다.”</p>
       </blockquote>
-      <button class="copy-button" id="copyStatement" type="button">첫 진술 복사</button>
-      <p class="copy-status" id="copyStatus" aria-live="polite"></p>
     </section>
 
     <footer class="page-footer">
@@ -221,6 +237,6 @@
   </main>
 
   <button class="top-button" id="topButton" type="button" tabindex="-1" aria-hidden="true" aria-label="맨 위로 이동" title="맨 위로">↑</button>
-  <script src="script.js"></script>
+  <script src="script.js?v=reader-tutorial-1"></script>
 </body>
 </html>

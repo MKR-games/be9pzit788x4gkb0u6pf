@@ -328,8 +328,6 @@ p { margin-bottom: 1em; }
 .statement-note p { margin: 0; font-size: .78rem; line-height: 1.55; }
 .statement-card { margin: 0; padding: 19px 17px 9px; background: var(--paper); border: 1.5px solid var(--green); border-radius: 12px; }
 .statement-card p { font-size: .98rem; line-height: 1.8; }
-.copy-button { width: 100%; min-height: 48px; margin-top: 12px; color: var(--green); background: transparent; border: 1.5px solid var(--green); border-radius: 10px; font-weight: 800; cursor: pointer; }
-.copy-status { min-height: 1.4em; margin: 5px 0 0; color: var(--green); font-size: .75rem; text-align: center; }
 
 .page-footer { margin-top: 24px; padding: 28px 18px; color: #fff; background: var(--green); border-radius: 16px; text-align: center; }
 .page-footer p { margin: 0 0 2px; font-size: .7rem; font-weight: 800; letter-spacing: .15em; }
@@ -367,8 +365,101 @@ button:focus-visible, a:focus-visible { outline: 3px solid #B76A2E; outline-offs
 }
 
 @media print {
-  .privacy-gate, .reader-header, .reading-progress, .top-button, .copy-button, .copy-status, .map-modal { display: none !important; }
+  .privacy-gate, .reader-header, .reading-progress, .top-button, .map-modal { display: none !important; }
   body { background: #fff; }
   .page-shell { width: 100%; padding: 0; }
   .content-section, .character-hero { break-inside: avoid; box-shadow: none; }
 }
+
+/* First-visit button guide. The real toolbar remains visible through the spotlight. */
+body.is-tutorial { overflow: hidden; overscroll-behavior: none; }
+.reader-tutorial {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  isolation: isolate;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.reader-tutorial[hidden] { display: none; }
+.reader-tutorial__spotlight {
+  position: absolute;
+  border: 2px solid var(--paper-light);
+  border-radius: 18px;
+  box-shadow: 0 0 0 9999px rgba(13, 13, 13, .72);
+  pointer-events: none;
+}
+.reader-tutorial__card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: min(380px, calc(100% - 24px));
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper-light);
+  border: 2px solid var(--green);
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .22);
+}
+.reader-tutorial__meta {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px 8px 18px;
+  color: var(--green);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.reader-tutorial__meta p { margin: 0; font-size: 13px; font-weight: 800; }
+.reader-tutorial__meta span { margin-left: 8px; font-variant-numeric: tabular-nums; }
+.reader-tutorial button {
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1.5px solid var(--green);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.reader-tutorial__meta button {
+  min-width: 44px;
+  padding-inline: 10px;
+  color: var(--green);
+  background: transparent;
+  border-color: transparent;
+  font-size: 13px;
+}
+.reader-tutorial__copy {
+  min-height: 0;
+  padding: 18px 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.reader-tutorial__copy h2 {
+  margin: 0 0 10px;
+  color: var(--green);
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+.reader-tutorial__copy p { margin: 0; font-size: 16px; line-height: 1.65; }
+.reader-tutorial__actions {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 20px 18px;
+}
+.reader-tutorial__actions button { min-width: 72px; color: var(--green); background: transparent; }
+.reader-tutorial__actions button:last-child { min-width: 110px; color: #fff; background: var(--green); }
+.reader-tutorial button:disabled { opacity: .38; cursor: default; }
+@media print {
+  .reader-tutorial { display: none !important; }
+  body.is-tutorial { overflow: visible; }
+}
+
