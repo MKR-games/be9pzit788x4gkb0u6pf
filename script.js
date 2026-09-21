@@ -22,6 +22,9 @@
   const mapBackdrop = document.getElementById("mapBackdrop");
   const mapViewport = document.getElementById("mapViewport");
   const mapImage = document.getElementById("mapImage");
+  const mapTitle = document.getElementById("mapTitle");
+  const mapCounter = document.getElementById("mapCounter");
+  const mapThumbnails = Array.from(document.querySelectorAll(".map-thumbnail"));
   const mapZoomOut = document.getElementById("mapZoomOut");
   const mapZoomIn = document.getElementById("mapZoomIn");
   const mapReset = document.getElementById("mapReset");
@@ -63,8 +66,8 @@
     },
     {
       targets: [mapOpen],
-      title: "MAP · 수련원 지도",
-      description: "방의 위치와 이동 경로를 확인할 수 있어요. 지도를 연 뒤 ＋·−로 확대하거나 줄여 보세요."
+      title: "MAP · 지도와 침대 배치",
+      description: "수련원 지도와 수련생방 침대 배치도를 볼 수 있어요. 아래 작은 미리보기 두 개 중 원하는 그림을 누르면 바뀝니다. 선택한 그림에는 체크 표시가 생겨요. ＋·−로 확대·축소하고, 맞춤을 누르면 처음 크기로 돌아옵니다."
     },
     {
       targets: [tocOpen],
@@ -334,6 +337,18 @@
 
   function resetMapView() { mapZoomIndex = 0; applyMapZoom(false); }
 
+  function selectMapImage(button) {
+    if (button.getAttribute("aria-pressed") === "true") return;
+    mapThumbnails.forEach((thumbnail) => {
+      thumbnail.setAttribute("aria-pressed", String(thumbnail === button));
+    });
+    mapTitle.textContent = button.dataset.mapTitle;
+    mapCounter.textContent = `MAP ${mapThumbnails.indexOf(button) + 1} / ${mapThumbnails.length}`;
+    mapImage.alt = button.dataset.mapAlt;
+    mapImage.src = button.dataset.mapSrc;
+    resetMapView();
+  }
+
   function openMap() {
     mapLastFocused = document.activeElement;
     mapModal.classList.add("is-open");
@@ -427,6 +442,12 @@
   mapZoomOut.addEventListener("click", function () { if (mapZoomIndex > 0) { mapZoomIndex -= 1; applyMapZoom(true); } });
   mapZoomIn.addEventListener("click", function () { if (mapZoomIndex < mapZoomLevels.length - 1) { mapZoomIndex += 1; applyMapZoom(true); } });
   mapReset.addEventListener("click", resetMapView);
+  mapThumbnails.forEach((button) => {
+    button.addEventListener("click", () => selectMapImage(button));
+  });
+  mapImage.addEventListener("load", () => {
+    if (mapModal.classList.contains("is-open")) applyMapZoom(false);
+  });
 
   document.addEventListener("keydown", function (event) {
     if (tutorialActive) {

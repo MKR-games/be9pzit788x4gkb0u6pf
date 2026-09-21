@@ -234,6 +234,27 @@ p { margin-bottom: 1em; }
 .map-viewport img { display: block; width: 100%; max-width: none; height: auto; margin: 0 auto; user-select: none; -webkit-user-drag: none; }
 .map-hint { margin: 0; padding: 9px 14px calc(9px + var(--safe-bottom)); color: var(--green-soft); background: var(--paper); font-size: .7rem; font-weight: 700; line-height: 1.45; text-align: center; }
 
+/* Two-image map gallery; the selector stays below the scrolling image. */
+.map-gallery-footer { min-width: 0; background: var(--paper); border-top: 1px solid var(--line); }
+.map-thumbnails { display: grid; grid-template-columns: repeat(2, minmax(0, 168px)); justify-content: center; gap: 10px; padding: 10px 12px 0; }
+.map-thumbnail { position: relative; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 66px; padding: 7px; color: var(--green-soft); background: var(--paper-light); border: 2px solid transparent; border-radius: 11px; box-shadow: 0 0 0 1px var(--line); text-align: left; cursor: pointer; touch-action: manipulation; }
+.map-thumbnail img { display: block; flex: 0 0 56px; width: 56px; height: 48px; object-fit: contain; background: #10251F; border-radius: 5px; pointer-events: none; }
+.map-thumbnail__label { min-width: 0; padding-right: 5px; font-size: 12px; font-weight: 800; line-height: 1.4; }
+.map-thumbnail__check { position: absolute; top: -7px; right: -5px; display: grid; place-items: center; width: 19px; height: 19px; color: #fff; background: var(--green); border: 2px solid var(--paper); border-radius: 50%; font-size: 12px; line-height: 1; visibility: hidden; }
+.map-thumbnail[aria-pressed="true"] { color: var(--green); background: var(--paper-deep); border-color: var(--green); box-shadow: none; }
+.map-thumbnail[aria-pressed="true"] .map-thumbnail__check { visibility: visible; }
+.map-thumbnail:focus-visible { outline: 3px solid var(--green-soft); outline-offset: 3px; }
+@media (max-height: 500px) and (orientation: landscape) {
+  .map-modal__header { padding-block: 6px; }
+  .map-modal__header h2 { font-size: 1rem; }
+  .map-toolbar { padding-block: 4px; }
+  .map-thumbnails { padding-top: 7px; }
+  .map-thumbnail { min-height: 48px; padding-block: 4px; }
+  .map-thumbnail img { height: 36px; }
+  .map-hint { padding-block: 5px; font-size: 11px; }
+  .map-hint br { display: none; }
+}
+
 .page-shell { width: min(100%, 720px); margin: 0 auto; padding: 22px 14px calc(80px + var(--safe-bottom)); }
 .character-hero {
   position: relative;

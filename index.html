@@ -8,7 +8,7 @@
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
   <title>똑… 똑… 똑… | 서은찬 캐릭터 설정서</title>
   <meta name="description" content="머더 미스터리 똑… 똑… 똑… 서은찬 전용 모바일 캐릭터 설정서">
-  <link rel="stylesheet" href="style.css?v=reader-tutorial-1">
+  <link rel="stylesheet" href="style.css?v=feedback-20260920">
 </head>
 <body class="is-locked">
   <span class="page-top-anchor" id="pageTop" aria-hidden="true"></span>
@@ -77,7 +77,7 @@
     <button class="map-modal__backdrop" id="mapBackdrop" type="button" tabindex="-1" aria-label="지도 닫기"></button>
     <section class="map-modal__panel" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
       <header class="map-modal__header">
-        <div><span>TRAINING CENTER</span><h2 id="mapTitle">수련원 MAP</h2></div>
+        <div><span id="mapCounter">MAP 1 / 2</span><h2 id="mapTitle" aria-live="polite">수련원 지도</h2></div>
         <button id="mapClose" type="button">닫기</button>
       </header>
       <div class="map-toolbar" aria-label="지도 확대 설정">
@@ -89,7 +89,21 @@
       <div class="map-viewport" id="mapViewport" tabindex="0" aria-label="확대된 지도를 스크롤하여 확인">
         <img id="mapImage" src="map.png" alt="수련원 실외시설과 실내시설의 방 및 이동 구조를 보여 주는 지도" draggable="false">
       </div>
-      <p class="map-hint">확대 후 지도를 위아래·좌우로 움직여 확인하세요.</p>
+      <footer class="map-gallery-footer">
+        <div class="map-thumbnails" role="group" aria-label="지도 선택">
+          <button class="map-thumbnail" type="button" data-map-src="map.png" data-map-title="수련원 지도" data-map-alt="수련원 실외시설과 실내시설의 방 및 이동 구조를 보여 주는 지도" aria-label="수련원 지도 보기" aria-pressed="true" aria-controls="mapViewport">
+            <img src="map.png" alt="" width="56" height="48" loading="lazy" draggable="false">
+            <span class="map-thumbnail__label">수련원 지도</span>
+            <span class="map-thumbnail__check" aria-hidden="true">✓</span>
+          </button>
+          <button class="map-thumbnail" type="button" data-map-src="bed-layout.png" data-map-title="수련생방 침대 배치도" data-map-alt="수련생방 침대 배치도. 왼쪽 위는 서은찬, 왼쪽 아래는 김하준, 오른쪽은 민도겸, 아래쪽 가로 침대는 강태민. 창문은 위쪽, 출입문은 오른쪽 위에 있다." aria-label="수련생방 침대 배치도 보기" aria-pressed="false" aria-controls="mapViewport">
+            <img src="bed-layout.png" alt="" width="56" height="48" loading="lazy" draggable="false">
+            <span class="map-thumbnail__label">침대 배치도</span>
+            <span class="map-thumbnail__check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+        <p class="map-hint">미리보기를 누르면 지도가 바뀝니다.<br>확대 후에는 위아래·좌우로 움직여 확인하세요.</p>
+      </footer>
     </section>
   </aside>
 
@@ -113,7 +127,7 @@
       <div class="profile-grid">
         <article><span>도장 안에서의 모습</span><strong>불안을 먼저 알아차리는 사람</strong><p>말이 많지 않고 늘 한 발 뒤에 섰다. 누가 억지로 웃는지 알아도 쉽게 입 밖으로 꺼내지 못했다.</p></article>
         <article><span>김하준과의 관계</span><strong>걱정하면서도 말리지 못한 후배</strong><p>하준이 무리에 남으려 애쓴다는 것을 느꼈다. 그가 빠르게 취하는 것을 보고도 분위기를 깨지 못했다.</p></article>
-        <article><span>그날의 출발점</span><strong>열린 창문과 기억의 공백</strong><p>속이 좋지 않아 몰래 창문으로 나갔다. 창고에서 흰 형체를 본 뒤 기억이 끊겼다.</p></article>
+        <article><span>그날의 출발점</span><strong>열린 창문과 기억의 공백</strong><p>문밖에 귀신이 있을까 두려워 문 대신 창문으로 나갔다. 창고에서 흰 형체를 본 뒤 기억이 끊겼다.</p></article>
       </div>
     </section>
 
@@ -144,17 +158,18 @@
       </div>
       <div class="story-block">
         <h3>하준이 돌아오지 않았다</h3>
-        <p>하준은 소주병을 치우려는 것처럼 들고 나갔다. 강태민도 곧 따라나갔다. 시간이 지나도 하준은 돌아오지 않았고, 태민만 돌아왔다. 방 안의 공기가 이상하게 가라앉았다.</p>
-        <p>방문 바로 밖에서 세 번의 노크가 났다. 겁이 났지만 문을 열지 않았다. 속도 좋지 않았고 물이 필요했다. 하준도 계속 신경 쓰였다.</p>
+        <p>하준은 소주병을 치우려는 것처럼 들고 나갔다. 강태민도 곧 따라나갔다. 시간이 지나도 하준은 돌아오지 않았고, 태민만 돌아왔다. 태민은 방에 들어서며 불을 껐다. 어두워서 서로의 모습이 잘 보이지 않았다. 방 안의 공기가 이상하게 가라앉았다.</p>
+        <p>방문 바로 밖에서 세 번의 노크가 났다. 저녁에 들은 귀신 이야기가 떠올랐다. 문밖에 귀신이 서 있을까 봐 문을 열지 못했다. 누가 두드렸는지는 확인하지 않았다.</p>
       </div>
       <div class="story-block story-block--dark">
         <h3>창문 밖으로</h3>
-        <p>수련생방 문으로 나가면 모두가 알게 된다. 그래서 당신은 태민이 열어 둔 창문을 봤다. 잠깐 바람을 쐬고 물과 하준의 상황을 확인할 생각으로 창문을 통해 밖으로 나갔다.</p>
-        <p>술기운과 메스꺼움 때문에 몸을 가누기 어려웠다. 다른 사람에게 들키지 않도록 몸을 낮추고 벽을 짚으며 천천히 마당을 가로질러 창고에 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다.</p>
+        <p>속은 메스껍고 입은 말랐다. 잠깐 바람을 쐬고 물을 마시고 싶었지만, 노크가 들린 문 앞을 지나갈 엄두가 나지 않았다.</p>
+        <p>태민이 열어 둔 창문은 낮고 바로 밖이 마당이었다. 그쪽으로 나가면 무서운 복도를 지나지 않아도 됐다. 당신은 소리를 내지 않고 조용히 창문을 넘어 마당으로 나갔다. 하준이 돌아오지 않는 것도 마음에 걸렸지만, 우선은 물을 마시고 속을 가라앉히려 했다.</p>
+        <p>술기운과 메스꺼움 때문에 몸을 가누기 어려웠다. 몸을 낮추고 벽을 짚으며 천천히 마당을 가로질렀다. 창고에 마실 물이 있을까 싶어 안으로 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다.</p>
       </div>
       <div class="story-block story-block--danger">
         <h3>창고에서 본 흰 형체</h3>
-        <p>물과 예비 물품을 찾으며 창고 안을 살피던 중, 관리실 쪽 연결문으로 들어오는 흰 형체를 보았다. 흰 이불을 뒤집어쓴 사람처럼 보였지만, 당신은 귀신이라고 믿었다.</p>
+        <p>물과 예비 물품을 찾으며 창고 안을 살피던 중, 관리실 쪽 연결문으로 들어오는 흰 형체를 보았다.</p>
         <blockquote>흰 형체가 움직였다.</blockquote>
         <p>저녁의 괴담과 노크 소리, 술기운과 수련원의 정적이 한꺼번에 떠올랐다. 당신은 그 자리에서 정신을 잃었다.</p>
       </div>
@@ -173,8 +188,8 @@
       <p class="timeline-note"><strong>읽는 법</strong> 배경 행동은 시간 구간으로 묶었고, 사건과 판단에 중요한 시각은 문장 안에 정확히 표시했습니다.</p>
       <ol class="timeline-list">
         <li><div class="timeline-time" aria-label="21시 40분부터 22시 05분까지">21:40<br><span>~22:05</span></div><div><span class="location">수련생방</span><p>강태민이 소주를 꺼냈다. 당신은 망설였지만 자리에 남았고, 김하준이 빠르게 취하는 것을 보고도 말리지 못했다. <strong>21:50</strong> 강태민이 창문을 열었다. 22시 무렵 하준이 술병을 치워야 한다는 취지로 말했지만 대답하지 않았다. <strong>22:05</strong> 김하준과 강태민이 차례로 방을 나갔다.</p></div></li>
-        <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 05분부터 22시 24분까지">22:05<br><span>~22:24</span></div><div><span class="location">수련생방·마당</span><p><strong>22:17</strong> 강태민만 돌아와 김하준이 없는 것을 신경 썼다. <strong>22:22</strong> 방문 바로 밖에서 세 번의 노크를 들었지만 문을 열지 않았다. <strong>22:24</strong> 속이 좋지 않고 물이 필요해 다른 사람에게 들키지 않으려고 열린 창문으로 빠져나갔다.</p></div></li>
-        <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 24분부터 22시 35분까지">22:24<br><span>~22:35</span></div><div><span class="location">마당·창고</span><p>술기운과 메스꺼움 때문에 벽을 짚고, 다른 사람에게 들키지 않도록 몸을 낮춘 채 천천히 마당을 가로질렀다. <strong>22:28</strong> 창고 바깥문으로 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다. 물을 찾으며 안을 살피다가 <strong>22:35</strong> 관리실 쪽 연결문으로 창고에 들어오는 흰 이불을 뒤집어쓴 사람 같은 형체를 보았다. 당신은 귀신이라고 믿고 그 자리에서 정신을 잃었다.</p></div></li>
+        <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 05분부터 22시 24분까지">22:05<br><span>~22:24</span></div><div><span class="location">수련생방·마당</span><p><strong>22:17</strong> 강태민만 돌아와 방의 불을 껐다. 어두워서 서로의 모습이 잘 보이지 않았다. 당신은 김하준이 돌아오지 않은 것이 신경 쓰였다. <strong>22:22</strong> 방문 바로 밖에서 세 번의 노크를 들었다. 저녁의 괴담이 떠올라 문밖에 귀신이 있을까 봐 문을 열지 못했다. <strong>22:24</strong> 속이 메스껍고 물이 필요했다. 바람을 쐬고 물을 찾으러, 노크가 난 문 앞을 피해 열린 창문을 소리 없이 넘어 마당으로 나갔다.</p></div></li>
+        <li class="timeline-list__critical"><div class="timeline-time" aria-label="22시 24분부터 22시 35분까지">22:24<br><span>~22:35</span></div><div><span class="location">마당·창고</span><p>술기운과 메스꺼움 때문에 몸을 낮추고 벽을 짚으며 천천히 마당을 가로질렀다. 마실 물을 찾으려고 <strong>22:28</strong> 창고 바깥문으로 들어갔다. 창고와 관리실 사이의 연결문은 열려 있었다. 물을 찾으며 안을 살피다가 <strong>22:35</strong> 관리실 쪽 연결문으로 창고에 들어오는 흰 형체를 보았다. 당신은 귀신이라고 믿고 그 자리에서 정신을 잃었다.</p></div></li>
         <li><div class="timeline-time" aria-label="시간 불명">시간<br><span>불명</span></div><div><span class="location">기억 없음</span><p>정신을 잃은 뒤부터 다음 날 아침 눈을 뜨기 전까지 아무것도 기억하지 못한다.</p></div></li>
         <li><div class="timeline-time">다음 날<br>아침</div><div><span class="location">수련생방·닫힌 방 앞</span><p>수련생방에서 눈을 떴고 왜 그곳에 있는지 알 수 없었다. 김하준이 닫힌 방 안에서 발견되는 것을 지켜보며 창고에서 본 흰 형체를 떠올렸다.</p></div></li>
       </ol>
@@ -221,11 +236,11 @@
         <span class="section-number">07</span>
         <div><p>OPENING STATEMENT</p><h2>첫 진술</h2></div>
       </div>
-      <div class="statement-note"><strong>게임 시작 시 읽습니다.</strong><p>자신의 차례가 오면 아래 내용을 다른 플레이어에게 그대로 읽어 주세요.</p></div>
+      <div class="statement-note"><strong>오프닝에서는 캐릭터 카드의 첫 진술 요약을 읽습니다.</strong><p>아래는 그 진술의 전체 내용입니다. 비밀을 숨기려 사실과 다르게 말한 부분이 있습니다. 자신이 실제로 기억하는 행동은 ‘배경’과 ‘그날 밤의 행동’을 기준으로 확인하세요.</p></div>
       <blockquote class="statement-card" id="statementText">
         <p>“저는 수련생방에 있었습니다. 속이 좀 안 좋았고, 피곤했습니다. 그래서 중간부터는 기억이 또렷하지 않습니다.</p>
         <p>하준이 형이 화장실 간다고 나간 건 기억납니다. 손에 뭘 들고 있었던 것 같기도 합니다. 태민이 형도 그 뒤에 나간 것 같고요.</p>
-        <p>아침에 눈을 떴을 때 저는 수련생방에 있었습니다. 하준이 형이 닫힌 방에서 발견됐다는 말을 듣고, 저녁에 들었던 괴담이 먼저 떠올랐습니다. 저는 정말 왜 그런 일이 생겼는지 모르겠습니다.”</p>
+        <p>아침에 눈을 떴을 때 저는 수련생방에 있었습니다. 하준이 형이 닫힌 방에서 발견됐다는 말을 듣고, 저녁에 들었던 괴담이 먼저 떠올랐습니다. 아무래도 이 수련원에는 진짜 귀신이 있는 것 같습니다. 저는 정말 왜 그런 일이 생겼는지 모르겠습니다.”</p>
       </blockquote>
     </section>
 
@@ -237,6 +252,6 @@
   </main>
 
   <button class="top-button" id="topButton" type="button" tabindex="-1" aria-hidden="true" aria-label="맨 위로 이동" title="맨 위로">↑</button>
-  <script src="script.js?v=reader-tutorial-1"></script>
+  <script src="script.js?v=feedback-20260920"></script>
 </body>
 </html>
